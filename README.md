@@ -1,6 +1,6 @@
-## React Interview Question
+## React Interview Questions
 
-**1.What is React?**
+**1. What is React?**
 
 
 It is an open-source front-end JavaScript library most popular for single-page web applications. It is helpful when interactive and complex UIs are built for websites or mobile apps. React.js was released for use in 2015 and since then it has become one of the most trusted and used technologies of recent time. It has built one of the largest developer communities around itself.
@@ -68,7 +68,7 @@ React.js interview questions that ask about the use of a certain function or com
 **8.
 Is HTML used in React?**
 
-No, it uses an HTML-in JavaScript syntax called JSX (JavaScript and XML) that converts HTML tags to React elements.
+No, it uses an HTML-in-JavaScript syntax called JSX (JavaScript and XML) that converts HTML tags to React elements.
 
 **9.
 What is the release date of React?**
@@ -79,3 +79,33 @@ March 2013
 Can you tell two downsides of React?**
 
 It is difficult to integrate with an MVC framework like Rails. Also, users need to have the knowledge about integrating user interface into MVC framework.
+
+**11. Can web browsers read JSX directly?**
+
+Web browsers cannot read JSX directly. This is because they are built to only read regular JS objects and JSX is not a regular JavaScript object 
+For a web browser to read a JSX file, the file needs to be transformed into a regular JavaScript object. For this, we use Babel
+![image](https://github.com/MuhammadShoaibKalim/React-Interview/assets/120046632/83beb3e6-3aee-43be-850d-f273366a7e9f)
+
+**12. What is an event in React?**
+
+An event is an action that a user or system may trigger, such as pressing a key, a mouse click, etc.
+
+React events are named using camelCase, rather than lowercase in HTML.
+With JSX, you pass a function as the event handler, rather than a string in HTML.
+<Button onPress={lightItUp} />
+
+**13. What is a state in React?**
+
+The state is a built-in React object that is used to contain data or information about the component. The state in a component can change over time, and whenever it changes, the component re-renders.
+The state change can happen as a response to user action or system-generated events. It determines the behavior of the component and how it will render.
+
+**24. What is a higher-order component in React?**
+
+A higher-order component acts as a container for other components. This helps to keep components simple and enables re-usability. They are generally used when multiple components have to use a common logic. 
+
+**15.
+Explain the ‘Store’ feature.**
+
+
+It is a feature of Redux that allows the application to save the entire State at one place. This allows you to get regular updates from the store directly.
+
