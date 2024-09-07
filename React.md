@@ -219,9 +219,11 @@ function Example() {
 ```
 **24. What is the difference between controlled and uncontrolled components in React?**
 
-Controlled Components: In controlled components, form data is handled by the React component's state. The value of the input is controlled by the state.
-Uncontrolled Components: In uncontrolled components, form data is handled by the DOM itself. Refs are used to access the form values.
-Example of a controlled component:
+**Controlled Components:** In controlled components, form data is handled by the React component's state. The value of the input is controlled by the state.
+
+**Uncontrolled Components:** In uncontrolled components, form data is handled by the DOM itself. Refs are used to access the form values.
+
+**Example of a controlled component:**
 ```
 class ControlledComponent extends React.Component {
   constructor(props) {
@@ -240,7 +242,7 @@ class ControlledComponent extends React.Component {
   }
 }
 ```
-Example of a uncontrolled component:
+**Example of an Uncontrolled component:**
 
 ```
 class UncontrolledComponent extends React.Component {
