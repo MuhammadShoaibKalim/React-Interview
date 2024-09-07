@@ -257,6 +257,7 @@ This document contains comprehensive React interview questions, structured into 
 
 ... (continued for Expert level)
 
+
 ## **Additional 52 Questions**
 
 1. **What is "key" prop and what is the benefit of using it in arrays of elements?**
@@ -267,8 +268,167 @@ This document contains comprehensive React interview questions, structured into 
 
 2. **What is the purpose of callback function as an argument of setState()?**
    - It ensures that the state is updated before any further actions are taken.
+   ```js
+   this.setState({ count: this.state.count + 1 }, () => {
+       console.log("State updated to:", this.state.count);
+   });
+   ```
 
-... (continued for all 52 questions)
+3. **What is the purpose of using super constructor with props argument?**
+   - In class-based components, `super(props)` is required when extending `React.Component`. It ensures that the parent class constructor (`React.Component`) is called with the `props` object, allowing the component to access `this.props`.
+
+4. **Which is the preferred option within callback refs and findDOMNode()?**
+   - **Callback refs** are preferred over `findDOMNode()` as they provide a more declarative way to access the DOM elements and are not deprecated.
+
+5. **What is the difference between createElement and cloneElement?**
+   - `React.createElement` creates a new element from scratch, while `React.cloneElement` clones an existing element and allows you to modify its props.
+
+6. **Why do you get "Router may have only one child element" warning?**
+   - In React Router, `<Router>` components (like `<BrowserRouter>`, `<HashRouter>`) expect exactly one child element. Wrapping multiple children in a `<div>` or a React fragment can solve this.
+
+7. **What is the difference between HTML and React event handling?**
+   - In React, event handlers are camelCase (e.g., `onClick` vs. `onclick` in HTML). React also uses synthetic events, which are cross-browser wrappers around the browser's native events.
+
+8. **What is the difference between Shadow DOM and Virtual DOM?**
+   - **Shadow DOM** is used for encapsulating the DOM and styles within Web Components, whereas **Virtual DOM** is an in-memory representation of the actual DOM, used by React to optimize UI rendering.
+
+9. **How to pass parameters to `history.push()` in React Router v4?**
+   - Parameters can be passed via the state object or as URL parameters.
+   ```js
+   history.push({
+       pathname: '/new-path',
+       state: { param1: value1 }
+   });
+   ```
+
+10. **How do you programmatically navigate using React Router v4?**
+   - Use the `history.push()` or `history.replace()` methods to navigate programmatically.
+   ```js
+   this.props.history.push('/new-path');
+   ```
+
+11. **When to use a Class Component over a Function Component?**
+   - Class components are used when you need lifecycle methods or state prior to React 16.8 (before hooks). With hooks available, functional components are now preferred in most cases.
+
+12. **What is the purpose of push and replace methods of history?**
+   - `push` adds a new entry to the history stack (allows backward navigation), while `replace` replaces the current entry in the history stack (no backward navigation).
+
+13. **What is the difference between Element and Component?**
+   - An **Element** is a simple object describing what you want to see on the screen, while a **Component** is a class or function that can accept props and state, returning elements.
+
+14. **How to pass a parameter to an event handler or callback?**
+   - You can pass parameters using an arrow function or `bind()` method.
+   ```js
+   <button onClick={() => this.handleClick(param)}>Click Me</button>
+   ```
+
+15. **How to bind methods or event handlers in JSX callbacks?**
+   - You can use `bind()` in the constructor or arrow functions in JSX.
+   ```js
+   this.handleClick = this.handleClick.bind(this);
+   ```
+
+16. **What are the different phases of component lifecycle?**
+   - **Mounting**, **Updating**, and **Unmounting**. Methods like `componentDidMount()`, `componentDidUpdate()`, and `componentWillUnmount()` correspond to these phases.
+
+17. **How React Router is different from history library?**
+   - React Router is built on top of the history library and provides higher-level routing components like `<Route>`, `<Link>`, and `<Switch>`, while the history library only manages session history.
+
+18. **How to create props proxy for HOC component?**
+   - By wrapping the passed component in another component, you can modify or pass props in the HOC before rendering the original component.
+   ```js
+   function withExtraProp(WrappedComponent) {
+     return function(props) {
+       return <WrappedComponent extraProp="extra" {...props} />;
+     };
+   }
+   ```
+
+19. **What is the difference between state and props?**
+   - **State** is local and mutable, managed within a component, while **Props** are passed from a parent component and are immutable.
+
+20. **How to get query parameters in React Router v4?**
+   - You can use `this.props.location.search` to get the query string, then parse it using a utility like `URLSearchParams`.
+
+21. **How to implement default or NotFound page?**
+   - You can use the `<Route>` component with `path="*"`. Place this route at the end of all routes.
+   ```js
+   <Route path="*" component={NotFound} />
+   ```
+
+22. **What are the `<Router>` components of React Router v4?**
+   - **BrowserRouter**, **HashRouter**, **MemoryRouter**, **StaticRouter**, and **NativeRouter** are different types of `<Router>` components.
+
+23. **Why should we not update the state directly?**
+   - Directly updating the state does not trigger re-rendering and can lead to unexpected behavior. Use `setState()` instead.
+
+24. **What are the lifecycle methods of React?**
+   - **Mounting**: `constructor`, `componentDidMount()`.
+   - **Updating**: `componentDidUpdate()`.
+   - **Unmounting**: `componentWillUnmount()`.
+
+25. **What are inline conditional expressions?**
+   - You can use the ternary operator or logical `&&` for inline conditionals.
+   ```js
+   {isLoggedIn ? <LogoutButton /> : <LoginButton />}
+   ```
+
+26. **What are Higher-Order Components?**
+   - HOCs are functions that take a component and return a new component with additional functionality.
+
+27. **What is the main goal of React Fiber?**
+   - React Fiber allows React to break down rendering work into smaller units and prioritize updates, enabling smoother animations and handling of complex UIs.
+
+28. **What are uncontrolled components?**
+   - Uncontrolled components rely on the DOM to handle form data, with refs used to access the values.
+
+29. **What are controlled components?**
+   - Controlled components manage their state via React, making React the single source of truth for form data.
+
+30. **What are synthetic events in React?**
+   - Synthetic events are React’s cross-browser wrapper around the browser’s native events, providing a consistent interface.
+
+31. **What is Lifting State Up in React?**
+   - Lifting state up means moving shared state to the closest common ancestor of the components that need it, enabling them to share the same data.
+
+
+32. **What is the use of refs in React?**
+   - Refs provide a way to access DOM nodes or React elements directly in your components. They can be used to focus an input field, trigger animations, or read values from an uncontrolled component.
+   ```js
+   class MyComponent extends React.Component {
+     constructor(props) {
+       super(props);
+       this.myRef = React.createRef();
+     }
+     componentDidMount() {
+       this.myRef.current.focus(); // Focus on an input field when the component mounts
+     }
+     render() {
+       return <input ref={this.myRef} />;
+     }
+   }
+   ```
+
+33. **What is the use of react-dom package?**
+   - The `react-dom` package provides DOM-specific methods that allow you to interact with the DOM in a React application. Commonly used methods include `render()`, `hydrate()`, and `unmountComponentAtNode()`.
+   ```js
+   import ReactDOM from 'react-dom';
+   ReactDOM.render(<App />, document.getElementById('root'));
+   ```
+
+...
+
+52. **How to handle data fetching in React?**
+   - Data fetching in React can be handled using `useEffect` to perform asynchronous operations like API calls. Libraries like `axios` or `fetch` can be used to make HTTP requests.
+   ```js
+   useEffect(() => {
+     fetchData();
+   }, []);
+   ```
+
+
+
+
 
 
 =============================================
