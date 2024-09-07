@@ -141,26 +141,29 @@ function Welcome(props) {
 ```
 **18. What is the difference between state and props?**
 
-State: State is a built-in object that holds data about the component. It is mutable and managed within the component.
-Props: Props are read-only attributes passed from a parent component to a child component. They are immutable and used to pass data and event handlers down the component tree.
+**State:** State is a built-in object that holds data about the component. It is mutable and managed within the component.
+
+**Props:** Props are read-only attributes passed from a parent component to a child component. They are immutable and used to pass data and event handlers down the component tree.
 
 **19. What are React lifecycle methods?**
 
 Lifecycle methods are special methods in React components that are called at different stages of a component's life. Some of the important lifecycle methods are:
 
--> componentDidMount(): Called after the component is mounted (inserted into the DOM).
--> componentDidUpdate(prevProps, prevState): Called after the component is updated.
--> componentWillUnmount(): Called before the component is unmounted (removed from the DOM).
+**-> componentDidMount():** Called after the component is mounted (inserted into the DOM).
+
+**-> componentDidUpdate(prevProps, prevState):** Called after the component is updated.
+
+**-> componentWillUnmount():** Called before the component is unmounted (removed from the DOM).
 
 **20. What is Redux, and why would you use it with React?**
 
-Redux is a state management library for JavaScript applications. It helps manage the state of an application predictably. Redux is used with React to manage complex state logic, share state across components, and make state changes easier to debug.
+Redux is a state management library for JavaScript applications. It helps manage the state of an application predictably. React uses Redux to manage complex state logic, share state across components, and make state changes easier to debug.
 
 **21. What is the context API in React?**
 
-The Context API is a feature in React that allows components to share data without having to pass props down through multiple levels of the component tree. It is useful for managing global state, themes, user information, and more.
+The Context API is a feature in React that allows components to share data without passing props down through multiple levels of the component tree. It is useful for managing global state, themes, user information, and more.
 
-For example:
+**For example:**
 ```
 const ThemeContext = React.createContext('light');
 
