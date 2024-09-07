@@ -852,3 +852,12 @@ function FocusInput() {
   );
 }
 ```
+**51. Why do React Hooks make use of refs?**
+
+Earlier, refs were only limited to class components but now it can also be accessible in function components through the useRef Hook in React.
+
+**The refs are used for:**
+
+- Managing focus, media playback, or text selection.
+- Integrating with DOM libraries by third-party.
+- Triggering the imperative animations.
