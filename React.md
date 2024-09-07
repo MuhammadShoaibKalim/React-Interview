@@ -313,12 +313,17 @@ The key attribute is used in React to identify which items in a list are changed
 
 Some ways to optimize performance in a React application include:
 
-Using the Production Build: Ensure that the production build is used in production.
-Code-Splitting: Split code into smaller bundles to load them on demand.
-Memoization: Use React.memo() to prevent unnecessary re-renders.
-useCallback and useMemo: Optimize functions and values that change frequently.
-Lazy Loading: Load components lazily to reduce the initial load time.
-Avoid Inline Functions: Define functions outside render methods to avoid re-creation on each render.
+**Using the Production Build:** Ensure that the production build is used in production.
+
+**Code-Splitting:** Split code into smaller bundles to load them on demand.
+
+**Memoization:** Use React.memo() to prevent unnecessary re-renders.
+
+**useCallback and useMemo:** Optimize functions and values that change frequently.
+
+**Lazy Loading:** Load components lazily to reduce the initial load time.
+
+**Avoid Inline Functions:** Define functions outside render methods to avoid re-creation on each render.
 
 **29. What are synthetic events in React?**
 
