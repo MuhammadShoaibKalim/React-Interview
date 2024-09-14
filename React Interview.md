@@ -737,6 +737,42 @@ Transformed by Babel into:
 const element = React.createElement('h1', null, 'Hello, World!');
 ```
 
+42. **What are React hooks? Name some common hooks.**
+React hooks allow you to use state and lifecycle methods in functional components.
+
+**Common Hooks:**
+- useState: Manages state in functional components.
+
+- useEffect: Handles side effects like data fetching.
+
+- useContext: Accesses context data.
+
+- useRef: Creates references to DOM elements or mutable variables.
+
+
+43. **How do useState and useEffect work in React?**
+    
+useState: Initializes and manages state in functional components.
+
+useEffect: Runs side effects like data fetching, subscriptions, or manually changing the DOM.
+
+**Example:**
+
+```
+function Counter() {
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    document.title = `Count: ${count}`;
+  }, [count]);
+
+  return (
+    <button onClick={() => setCount(count + 1)}>
+      Increment
+    </button>
+  );
+}
+```
 ## How to Contribute
 Feel free to fork this repository and submit pull requests to improve the questions and examples!
 
