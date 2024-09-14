@@ -38,6 +38,7 @@ This repository covers the 30 fundamental concepts of React every frontend engin
 
 9. **Explain the role of keys in React lists and why they are important.**
    - Keys help React identify which items in a list have changed, been added, or removed. They provide a stable identity for list items, helping React optimize rendering.
+   - Keys help React identify which items have changed, added, or removed. They must be unique among siblings to maintain performance during re-renders.
 
 10. **What are React Portals, and when should they be used?**
     - React Portals allow you to render children components into a DOM node outside of the parent component. They are often used for modals or tooltips.
@@ -773,6 +774,41 @@ function Counter() {
   );
 }
 ```
+44. **Explain the concept of lifting state up in React.**
+    
+Lifting state up means moving state from a child component to the nearest common parent component to share state or data between sibling components.
+
+**Example:**
+
+
+// Parent component managing the state
+```
+function Parent() {
+  const [sharedState, setSharedState] = useState('');
+
+  return (
+    <div>
+      <ChildA sharedState={sharedState} />
+      <ChildB setSharedState={setSharedState} />
+    </div>
+  );
+}
+```
+45. **How does one pass data between components in React?**
+    
+Data is passed from parent to child components via props, and between sibling components by lifting state to a common parent.
+
+46. **What are the new features introduced in React 18?**
+    
+1) Concurrent Rendering: Improves the responsiveness of UIs by interrupting rendering when higher-priority updates come in.
+   
+2) Automatic Batching: Groups updates to avoid unnecessary re-renders.
+   
+3) New Hooks: useTransition, useDeferredValue, and startTransition.
+   
+4) React Server Components: Allows building modern UX while maintaining server-rendered performance.
+
+   
 ## How to Contribute
 Feel free to fork this repository and submit pull requests to improve the questions and examples!
 
