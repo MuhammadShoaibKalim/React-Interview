@@ -726,6 +726,16 @@ This repository contains the top 40 React interview questions with detailed expl
 
 40. **Practical question: How to send data from a child component to a parent using useRef?**
     - While refs are generally used for accessing DOM elements, you can pass refs from parent to child using `forwardRef`, and update the parent from the child.
+   
+41. **Why can't browsers read JSX?**
+Browsers can't read JSX because it is not valid JavaScript. JSX needs to be transformed into standard JavaScript using tools like Babel before the browser can understand and execute it.  
+```
+const element = <h1>Hello, World!</h1>;
+```
+Transformed by Babel into:
+```
+const element = React.createElement('h1', null, 'Hello, World!');
+```
 
 ## How to Contribute
 Feel free to fork this repository and submit pull requests to improve the questions and examples!
